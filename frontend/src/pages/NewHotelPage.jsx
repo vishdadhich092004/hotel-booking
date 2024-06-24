@@ -30,6 +30,10 @@ function NewHotelPage() {
       .then(() => navigate("/"));
   };
 
+  const handleGoBack = () => {
+    navigate(-1);
+  };
+
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Create a New Hotel</h1>
@@ -100,8 +104,15 @@ function NewHotelPage() {
             required
           />
         </label>
-        <button type="submit" className="px-4 py-2 bg-blue-500 text-white">
+        <button type="submit" className="px-4 py-2 bg-blue-500 text-white mr-2">
           Create Hotel
+        </button>
+        <button
+          type="button"
+          onClick={handleGoBack}
+          className="px-4 py-2 bg-gray-500 text-white"
+        >
+          Go Back
         </button>
       </form>
     </div>

@@ -12,6 +12,9 @@ function EditHotelPage() {
     amenities: "",
     images: "",
   });
+  const handleGoBack = () => {
+    navigate(-1);
+  };
 
   useEffect(() => {
     fetch(`http://localhost:5000/hotels/${id}`)
@@ -115,6 +118,13 @@ function EditHotelPage() {
         </label>
         <button type="submit" className="px-4 py-2 bg-blue-500 text-white">
           Update Hotel
+        </button>
+        <button
+          type="button"
+          onClick={handleGoBack}
+          className="px-4 py-2 bg-gray-500 text-white"
+        >
+          Go Back
         </button>
       </form>
     </div>

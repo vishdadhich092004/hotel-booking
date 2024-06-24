@@ -6,6 +6,9 @@ function HotelDetailPage() {
   const navigate = useNavigate();
   const [hotel, setHotel] = useState(null);
 
+  const handleGoBack = () => {
+    navigate(-1);
+  };
   useEffect(() => {
     fetch(`http://localhost:5000/hotels/${id}`)
       .then((response) => response.json())
@@ -45,6 +48,13 @@ function HotelDetailPage() {
       </Link>
       <button onClick={handleDelete} className="ml-4 text-red-500">
         Delete Hotel
+      </button>
+      <button
+        type="button"
+        onClick={handleGoBack}
+        className="px-4 py-2 bg-gray-500 text-white"
+      >
+        Go Back
       </button>
     </div>
   );
